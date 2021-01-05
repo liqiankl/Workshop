@@ -2,6 +2,7 @@ import React from 'react';
 import {
   SafeAreaView,
   TextInput,
+  Button,
   ActivityIndicator,
   Text,
   View,
@@ -9,9 +10,6 @@ import {
 } from 'react-native';
 import { Formik } from 'formik';
 import Schema from '../components/Schema';
-
-
-import Button from '../components/Button';
 
 
 const FieldWrapper = ({ children, label, formikProps, formikKey }) => (
@@ -147,7 +145,7 @@ const ValidForm = () => {
               <ActivityIndicator color="red" />
             ) : (
               <View>
-                <Button label="Submit" onPress={formikProps.handleSubmit} />
+                <Button title="Submit"  onPress={formikProps.handleSubmit} />
               
                 <Text style={{ color: 'red' }}>
                   {formikProps.errors.general}
@@ -157,7 +155,9 @@ const ValidForm = () => {
           </View>
         )}
       </Formik>
+
     </View>
+    
   );
 };
 
